@@ -17,8 +17,10 @@ namespace ClassLibrary1
             restRequest.AddHeader("Accept", "application/json");
             restRequest.RequestFormat = DataFormat.Json;
 
-            RestRequest response = restClient.GetAsync(restRequest);
-            var content = response.Content;
+            
+            var response = restClient.GetAsync(restRequest);
+            var content = response.Result;
+
 
             var users = JsonConvert.DeserializeObject<ListOfUsersDTO>(content);
             return users;
