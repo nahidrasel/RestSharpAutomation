@@ -18,12 +18,10 @@ namespace ClassLibrary1
             restRequest.RequestFormat = DataFormat.Json;
 
             
-            var response = restClient.GetAsync(restRequest);
-            var content = response.Result;
+            var restResponse = restClient.ExecuteGetAsync(restRequest);
 
-
-            var users = JsonConvert.DeserializeObject<ListOfUsersDTO>(content);
-            return users;
+           // RestResponse content1 = ;
+            //var users = JsonConvert.DeserializeObject<ListOfUsersDTO>();
         
         }
     }
